@@ -1,0 +1,144 @@
+// Layout
+$mobile: 375px;
+$desktop: 1440px;
+
+// Primary
+$dark-cyan: hsl(185, 75%, 39%);
+$very-dark-desaturated-blue: hsl(229, 23%, 23%);
+$dark-grayish-blue: hsl(227, 10%, 46%);
+
+// Neutral
+$dark-gray: hsl(0, 0%, 59%);
+
+:root {
+  --body-background-color: hsl(185, 75%, 39%);
+  --font-color-default: hsl(229, 23%, 23%);
+}
+
+// Starter CSS reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Base
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--font-color-default);
+  
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background: var(--body-background-color);
+  background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+}
+
+.site-main {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center; /* [align-items: center] [justify-items: center] */
+}
+
+.card {
+  width: clamp(325px, calc(50vh - 100px), 350px);
+
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 8px 12px 24px hsla(0, 0%, 59%, 0.2);
+  overflow: hidden;
+
+  /* iphone 5/SE */
+  @media screen and (max-width: 340px) {
+    width: 280px;
+  }
+
+  &__header {
+    position: relative;
+    height: 140px;
+
+    background-image: url(../images/bg-pattern-card.svg);
+  }
+
+  &__profile {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    transform: translate(50%, 50%);
+    
+    .profile-img {
+      display: block;
+      border: 5px solid #fff;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    // margin-top: 53px;
+    padding-top: 77px; // [margin-top: 53] + [padding-top: 24] = 77px
+    padding-bottom: 28px; // 24px
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  &__age {
+    font-weight: 400;
+    color: $dark-grayish-blue;
+    margin-left: 12px;
+  }
+
+  &__city {
+    font-size: 14px;
+    color: $dark-grayish-blue;
+  }
+  
+  &__stats {
+    border-top: 1px solid #E7E7E7;
+    padding-top: 28px;
+    padding-bottom: 28px;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    @at-root {
+      .stat {
+        &__count {
+          font-weight: 700;
+          margin-bottom: 8px;
+        }
+
+        &__title {
+          font-size: 11px;
+          color: $dark-grayish-blue;
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  transform: translateX(50%);
+
+  width: 100%;
+}

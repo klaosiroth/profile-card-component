@@ -1,0 +1,121 @@
+:root {
+  --body-background-color: hsl(185, 75%, 39%);
+  --font-color-default: hsl(229, 23%, 23%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--font-color-default);
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--body-background-color);
+  background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+}
+
+.site-main {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  /* [align-items: center] [justify-items: center] */
+}
+
+.card {
+  width: clamp(325px, calc(50vh - 100px), 350px);
+  background-color: #fff;
+  border-radius: 14px;
+  box-shadow: 8px 12px 24px rgba(150, 150, 150, 0.2);
+  overflow: hidden;
+  /* iphone 5/SE */
+}
+
+@media screen and (max-width: 340px) {
+  .card {
+    width: 280px;
+  }
+}
+
+.card__header {
+  position: relative;
+  height: 140px;
+  background-image: url(../images/bg-pattern-card.svg);
+}
+
+.card__profile {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  transform: translate(50%, 50%);
+}
+
+.card__profile .profile-img {
+  display: block;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.card__info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 77px;
+  padding-bottom: 28px;
+}
+
+.card__name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.card__age {
+  font-weight: 400;
+  color: #6a6f81;
+  margin-left: 12px;
+}
+
+.card__city {
+  font-size: 14px;
+  color: #6a6f81;
+}
+
+.card__stats {
+  border-top: 1px solid #E7E7E7;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.stat__count {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat__title {
+  font-size: 11px;
+  color: #6a6f81;
+}
+
+.attribution {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  transform: translateX(50%);
+  width: 100%;
+}
